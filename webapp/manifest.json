@@ -42,10 +42,10 @@
 	"sap.ui5": {
 		"flexEnabled": false,
 		"rootView": {
-			"viewName": "deepdive.DeepDive.view.Master",
+			"viewName": "deepdive.DeepDive.view.App",
 			"type": "XML",
 			"async": true,
-			"id": "Master"
+			"id": "App"
 		},
 		"dependencies": {
 			"minUI5Version": "1.65.6",
@@ -96,20 +96,27 @@
 			},
 			"routes": [
 				{
-					"name": "RouteMaster",
-					"pattern": "RouteMaster",
-					"target": [
-						"TargetMaster"
-					]
+					"name": "Master",
+					"pattern": "",
+					"target": "Master"
+				},
+				{
+					"name": "Detail",
+					"pattern": "Detail/{soId}",
+					"target":"Detail"
 				}
 			],
 			"targets": {
-				"TargetMaster": {
+				"Master": {
 					"viewType": "XML",
 					"transition": "slide",
 					"clearControlAggregation": false,
 					"viewId": "Master",
 					"viewName": "Master"
+				},
+				"Detail": {
+					"viewType": "XML",
+					"viewName": "Detail"
 				}
 			}
 		}
