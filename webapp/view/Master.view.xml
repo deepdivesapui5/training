@@ -4,14 +4,50 @@
 			<pages>
 				<Page id="page" title="{i18n>title}">
 					<content>
-					    <Carousel xmlns="sap.m" id="carousel0" height="30%" loop="true">
-					        <pages>
-					            <Image src="https://pulse-static-files.s3.amazonaws.com/worldrugby/photo/2018/01/20/d6fbb639-e7f1-4488-b9a1-7b300a855eb3/Cap-Gem-lead-image.jpg" width="40%" height="100%" id="image0"/>
-					            <Image src="https://ui5.sap.com/resources/sap/ui/documentation/sdk/images/logo_ui5.png" width="140px" height="140px" id="image1"/>
-					            <Image src="https://ui5.sap.com/resources/sap/ui/documentation/sdk/images/logo_ui5.png" width="140px" height="140px" id="image2"/>
-					            </pages>
-					        
-					    </Carousel>
+						<Carousel xmlns="sap.m" id="carousel0" height="30%" loop="true">
+							<pages>
+								<Image
+									src="https://pulse-static-files.s3.amazonaws.com/worldrugby/photo/2018/01/20/d6fbb639-e7f1-4488-b9a1-7b300a855eb3/Cap-Gem-lead-image.jpg"
+									width="40%" height="100%" id="image0"/>
+								<Image src="https://ui5.sap.com/resources/sap/ui/documentation/sdk/images/logo_ui5.png" width="140px" height="140px" id="image1"/>
+								<Image src="https://ui5.sap.com/resources/sap/ui/documentation/sdk/images/logo_ui5.png" width="140px" height="140px" id="image2"/>
+							</pages>
+						</Carousel>
+						<Table noDataText="Drop column list items here and columns in the area above" items="{/ZWEDLV_SO}" id="table0">
+							<items>
+								<ColumnListItem type="Active" id="item0">
+									<cells>
+										<Text text="{so_id}" id="text0"/>
+										<Text text='{ path: "created_at", type: "sap.ui.model.type.Date", formatOptions: { pattern: "dd.MM.yyyy" } }' id="text1"/>
+										<FlexBox width="125px" justifyContent="SpaceBetween">
+											<ObjectStatus text="{path: 'gross_amount', formatter:'.formatter.addSpaces'}" state="{= ${gross_amount} > 10000 ? 'Warning' : 'None' }"/>
+											<ObjectStatus text="{currency_code}" state="{= ${gross_amount} > 10000 ? 'Warning' : 'None' }"/>
+										</FlexBox>
+										<Text text="{created_at}" id="text5"/>
+										<Text text="{gross_amount}" id="text6"/></cells>
+								</ColumnListItem>
+							</items>
+							<columns>
+								<Column id="column0">
+									<header>
+										<Label text="{/#ZWEDLV_SOType/so_id/@sap:label}" id="label0"/>
+									</header>
+								</Column>
+								<Column id="column3">
+									<header>
+										<Label text="{/#ZWEDLV_SOType/created_at/@sap:label}" id="label3"/>
+									</header>
+								</Column>
+								<Column id="column4">
+									<header>
+										<Label text="{/#ZWEDLV_SOType/gross_amount/@sap:label}" id="label4"/>
+									</header>
+								</Column>
+							</columns>
+							<customData>
+								<sap.ui.core:CustomData key="w5g.dt.editable" value="false" xmlns:sap.ui.core="sap.ui.core" id="data5"/>
+							</customData>
+						</Table>
 					</content>
 				</Page>
 			</pages>
