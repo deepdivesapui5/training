@@ -1,0 +1,20 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="deepdive.DeepDive.controller.Master" displayBlock="true">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+					    <Carousel xmlns="sap.m" id="carousel0" height="30%" loop="true">
+					        <pages>
+					            <Image src="https://pulse-static-files.s3.amazonaws.com/worldrugby/photo/2018/01/20/d6fbb639-e7f1-4488-b9a1-7b300a855eb3/Cap-Gem-lead-image.jpg" width="40%" height="100%" id="image0"/>
+					            <Image src="https://ui5.sap.com/resources/sap/ui/documentation/sdk/images/logo_ui5.png" width="140px" height="140px" id="image1"/>
+					            <Image src="https://ui5.sap.com/resources/sap/ui/documentation/sdk/images/logo_ui5.png" width="140px" height="140px" id="image2"/>
+					            </pages>
+					        
+					    </Carousel>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
