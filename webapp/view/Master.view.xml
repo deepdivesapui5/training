@@ -10,7 +10,11 @@
 					<Image src="https://ui5.sap.com/resources/sap/ui/documentation/sdk/images/logo_ui5.png" width="140px" height="140px" id="image2"/>
 				</pages>
 			</Carousel>
-			<Table noDataText="Drop column list items here and columns in the area above" items="{/ZWEDLV_SO}" id="table0">
+			<FlexBox class="sapUiTinyMarginBegin">
+				<StepInput id="everyNStepInput" max="100" min="1" value="2" width="10%"/>
+				<Button text="Apply Color" type="Emphasized" press="onApplyColorPress"/>
+			</FlexBox>
+			<Table noDataText="Drop column list items here and columns in the area above" items="{/ZWEDLV_SO}" id="masterTable">
 				<items>
 					<ColumnListItem type="Navigation" id="item0" press="onOrderPress">
 						<cells>
